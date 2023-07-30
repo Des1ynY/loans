@@ -13,3 +13,5 @@ dependencies:
   # Modules
   core:
     path: modules/core
+  api:
+    path: modules/api

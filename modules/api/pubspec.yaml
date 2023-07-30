@@ -1,0 +1,19 @@
+name: api
+description: Application data layer implemented with Firebase.
+publish_to: none
+
+environment:
+  sdk: ">=3.0.6 <4.0.0"
+
+dependencies:
+  # Modules
+  core:
+    path: ../core
+
+  # Firebase
+  firebase_core: 2.15.0
+  firebase_auth: 4.7.2
+
+  # Utils
+  meta: 1.9.1
+  collection: 1.17.1
