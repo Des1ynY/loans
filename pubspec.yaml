@@ -16,6 +16,9 @@ dependencies:
   api:
     path: modules/api
 
+  # Navigation
+  go_router: 10.0.0
+
   # State management
   bloc: 8.1.2
   flutter_bloc: 8.1.3
