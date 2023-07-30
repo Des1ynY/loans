@@ -9,3 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  # Modules
+  core:
+    path: modules/core
