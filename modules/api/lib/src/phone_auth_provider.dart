@@ -15,6 +15,15 @@ final class PhoneAuthProvider implements IPhoneAuthProvider {
         _resendTokenStorage = <String, int?>{};
 
   @override
+  User? get currentUser {
+    final apiUser = _auth.currentUser;
+
+    if (apiUser == null) return null;
+
+    return User(apiUser.uid);
+  }
+
+  @override
   Future<void> sendVerificationCode(String phone) {
     final resendToken = _resendTokenStorage[phone];
 
@@ -51,5 +60,10 @@ final class PhoneAuthProvider implements IPhoneAuthProvider {
     if (userData == null) throw api.FirebaseAuthException(code: 'invalid-credential');
 
     return User(userData.uid);
+  }
+
+  @override
+  Future<void> logout() {
+    return _auth.signOut();
   }
 }
