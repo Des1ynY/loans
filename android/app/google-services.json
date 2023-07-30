@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "538877035534",
+    "project_id": "vzaimy-loans-app",
+    "storage_bucket": "vzaimy-loans-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538877035534:android:0ea1ba11ef0a2cca51e85f",
+        "android_client_info": {
+          "package_name": "com.github.des1yny.loans"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538877035534-mgk4bp4tv62k8l3nqj7rrgttitpusufu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.github.des1yny.loans",
+            "certificate_hash": "ce348e9250c5d83508c3cb714eb27c92a16655b5"
+          }
+        },
+        {
+          "client_id": "538877035534-1s77g8fkph3k8ot8hqlet4b3t28luj8t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx4nYGDNbvTEGJU0koSzBlSGVwtJd_ykE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538877035534-1s77g8fkph3k8ot8hqlet4b3t28luj8t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
