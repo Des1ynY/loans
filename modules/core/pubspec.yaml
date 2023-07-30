@@ -1,0 +1,11 @@
+name: core
+description: Application domain layer.
+publish_to: none
+
+environment:
+  sdk: ">=3.0.6 <4.0.0"
+
+dependencies:
+  # Utils
+  meta: 1.9.1
+  collection: 1.17.1
