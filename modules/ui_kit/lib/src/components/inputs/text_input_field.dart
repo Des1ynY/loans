@@ -9,7 +9,7 @@ export 'src/text_input_field_base.dart' show TextInputCallback;
 
 class TextInputField extends TextInputFieldBase {
   const TextInputField({
-    required super.controller,
+    super.controller,
     super.focusNode,
     super.keyboardType,
     super.capitalization,
@@ -27,8 +27,8 @@ class TextInputField extends TextInputFieldBase {
   });
 
   const factory TextInputField.labeled({
-    required TextEditingController controller,
     required String label,
+    TextEditingController? controller,
     FocusNode? focusNode,
     TextInputType? keyboardType,
     TextCapitalization capitalization,
@@ -50,8 +50,8 @@ class _LabeledTextInputField extends TextInputField {
   final String label;
 
   const _LabeledTextInputField({
-    required super.controller,
     required this.label,
+    super.controller,
     super.focusNode,
     super.keyboardType,
     super.capitalization,

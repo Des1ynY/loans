@@ -8,7 +8,7 @@ import 'adaptive_underline_border.dart';
 typedef TextInputCallback<T> = T Function(String? value);
 
 class TextInputFieldBase extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final FocusNode? focusNode;
 
   final TextInputType? keyboardType;
@@ -29,7 +29,7 @@ class TextInputFieldBase extends StatelessWidget {
   final EdgeInsets scrollPadding;
 
   const TextInputFieldBase({
-    required this.controller,
+    this.controller,
     this.focusNode,
     this.keyboardType,
     this.capitalization = TextCapitalization.none,
