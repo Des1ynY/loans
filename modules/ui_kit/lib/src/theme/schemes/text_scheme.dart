@@ -60,7 +60,6 @@ const $MainFontFamily = 'Inter';
 const $MainTextScheme = TextScheme(
   headers: HeadersScheme(
     displayLarge: TextStyle(
-      inherit: false,
       fontSize: 48,
       fontWeight: FontWeight.w800,
       fontFamily: $MainFontFamily,
@@ -68,7 +67,6 @@ const $MainTextScheme = TextScheme(
       height: 1,
     ),
     display: TextStyle(
-      inherit: false,
       fontSize: 40,
       fontWeight: FontWeight.w800,
       fontFamily: $MainFontFamily,
@@ -76,7 +74,6 @@ const $MainTextScheme = TextScheme(
       height: 1,
     ),
     h1: TextStyle(
-      inherit: false,
       fontSize: 32,
       fontWeight: FontWeight.w800,
       fontFamily: $MainFontFamily,
@@ -84,7 +81,6 @@ const $MainTextScheme = TextScheme(
       height: 34 / 32,
     ),
     h2: TextStyle(
-      inherit: false,
       fontSize: 24,
       fontWeight: FontWeight.w800,
       fontFamily: $MainFontFamily,
@@ -92,7 +88,6 @@ const $MainTextScheme = TextScheme(
       height: 28 / 24,
     ),
     h3: TextStyle(
-      inherit: false,
       fontSize: 20,
       fontWeight: FontWeight.w800,
       fontFamily: $MainFontFamily,
@@ -102,7 +97,6 @@ const $MainTextScheme = TextScheme(
   ),
   paragraphs: ParagraphScheme(
     xl: TextStyle(
-      inherit: false,
       fontSize: 24,
       fontWeight: FontWeight.w500,
       fontFamily: $MainFontFamily,
@@ -110,7 +104,6 @@ const $MainTextScheme = TextScheme(
       height: 28 / 24,
     ),
     l: TextStyle(
-      inherit: false,
       fontSize: 20,
       fontWeight: FontWeight.w500,
       fontFamily: $MainFontFamily,
@@ -118,7 +111,6 @@ const $MainTextScheme = TextScheme(
       height: 26 / 20,
     ),
     m: TextStyle(
-      inherit: false,
       fontSize: 16,
       fontWeight: FontWeight.w500,
       fontFamily: $MainFontFamily,
@@ -126,7 +118,6 @@ const $MainTextScheme = TextScheme(
       height: 20 / 16,
     ),
     mSemiBold: TextStyle(
-      inherit: false,
       fontSize: 16,
       fontWeight: FontWeight.w600,
       fontFamily: $MainFontFamily,
@@ -134,7 +125,6 @@ const $MainTextScheme = TextScheme(
       height: 1.25,
     ),
     s: TextStyle(
-      inherit: false,
       fontSize: 14,
       fontWeight: FontWeight.w500,
       fontFamily: $MainFontFamily,
@@ -142,7 +132,6 @@ const $MainTextScheme = TextScheme(
       height: 18 / 14,
     ),
     sSemiBold: TextStyle(
-      inherit: false,
       fontSize: 14,
       fontWeight: FontWeight.w600,
       fontFamily: $MainFontFamily,
@@ -150,7 +139,6 @@ const $MainTextScheme = TextScheme(
       height: 18 / 14,
     ),
     xs: TextStyle(
-      inherit: false,
       fontSize: 10,
       fontWeight: FontWeight.w500,
       fontFamily: $MainFontFamily,
