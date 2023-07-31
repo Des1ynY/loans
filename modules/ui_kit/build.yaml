@@ -1,0 +1,6 @@
+targets:
+  $default:
+    builders:
+      theme_tailor:
+        options:
+          theme_getter: none
