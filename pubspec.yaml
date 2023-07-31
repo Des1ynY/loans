@@ -29,3 +29,29 @@ dependencies:
   collection: 1.17.1
   firebase_core: 2.15.0
   bloc_concurrency: 0.2.2
+
+dev_dependencies:
+  # Code generation
+  build_runner: 2.4.6
+  build_verify: 3.1.0
+
+  # Utils
+  flutter_gen_runner: 5.3.1
+
+flutter_gen:
+  output: lib/src/shared/assets/
+
+flutter:
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets\fonts\Inter-ExtraBold.ttf
+          weight: 800
+        - asset: assets\fonts\Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets\fonts\Inter-Medium.ttf
+          weight: 500
+
+    - family: IcoMoon
+      fonts:
+        - asset: assets\fonts\icomoon.ttf
