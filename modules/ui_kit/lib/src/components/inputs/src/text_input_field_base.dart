@@ -62,6 +62,7 @@ class TextInputFieldBase extends StatelessWidget {
       textCapitalization: capitalization,
       textInputAction: inputAction,
       inputFormatters: formatters,
+      keyboardAppearance: context.theme.brightness,
       minLines: minLines,
       maxLines: maxLines,
       validator: validator,
