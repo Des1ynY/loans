@@ -1,6 +1,6 @@
 library ui_kit;
 
-// Spacing
+export 'components.dart';
+export 'constants.dart';
 export 'spacing.dart';
-// Theme
 export 'theme.dart';

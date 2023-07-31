@@ -5,9 +5,9 @@ const kBaseSpacing = 4.0;
 const kSpacingXXS = kBaseSpacing;
 const kSpacingXS = kBaseSpacing * 2;
 
-const kSpacingSM = kBaseSpacing * 3;
-const kSpacingMD = kBaseSpacing * 4;
-const kSpacingLG = kBaseSpacing * 6;
+const kSpacingS = kBaseSpacing * 3;
+const kSpacingM = kBaseSpacing * 4;
+const kSpacingL = kBaseSpacing * 6;
 
 const kSpacingXL = kBaseSpacing * 8;
 const kSpacingXXL = kBaseSpacing * 12;

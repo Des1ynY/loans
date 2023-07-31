@@ -6,6 +6,7 @@ part 'schemes/text_scheme.dart';
 part 'theme.tailor.dart';
 
 final $MainTheme = ThemeData(
+  brightness: Brightness.light,
   scaffoldBackgroundColor: $MainColorsScheme.surface.primary,
   extensions: const [$MainColorsScheme, $MainTextScheme],
 );
