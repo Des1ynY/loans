@@ -1,3 +1,11 @@
 {
-    "@@locale": "ru"
+    "@@locale": "ru",
+    "@@LOGIN_PAGE": "",
+    "welcome_first_row": "Войдите",
+    "welcome_second_row": "с помощью",
+    "welcome_third_row": "телефона",
+    "send_code_button": "Продолжить",
+    "login_warning": "Нажимая кнопку «Продолжить», вы соглашаетесь на обработку персональных данных в соответсвии с Офертой и Политикой обработки персональных данных",
+    "login_warning_offer": "Офертой",
+    "login_warning_privacy": "Политикой обработки персональных данных"
 }

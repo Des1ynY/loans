@@ -7,13 +7,14 @@ import 'package:loans/src/features/profile/widgets/pages/profile/profile_page.da
 import 'package:loans/src/features/session/widgets/pages/new_session/new_session_page.dart';
 
 final $RouterConfig = GoRouter(
-  initialLocation: '/new-session',
+  initialLocation: '/login',
   routes: [
     StatefulShellRoute(
       navigatorContainerBuilder: (context, navigationShell, children) => NavigationManager(
         navigationShell: navigationShell,
         children: children,
       ),
+      builder: (context, state, navigationShell) => navigationShell,
       branches: [
         StatefulShellBranch(
           routes: [
