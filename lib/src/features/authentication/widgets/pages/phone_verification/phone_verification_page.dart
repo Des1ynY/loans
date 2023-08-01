@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loans/src/features/authentication/widgets/pages/phone_verification/phone_verification_page_scope.dart';
 import 'package:loans/src/features/authentication/widgets/pages/phone_verification/widgets/page_title.dart';
 import 'package:ui_kit/ui_kit.dart';
 
@@ -14,19 +15,21 @@ class PhoneVerificationPage extends StatefulWidget {
 class _PhoneVerificationPageState extends State<PhoneVerificationPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(kSpacingL),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(kSpacingL),
-              child: PhoneVerificationPageTitle(phone: widget.phone),
-            ),
-            const SizedBox(height: kSpacingXL),
-            const CodeInputField(codeLength: 6),
-            const Expanded(child: SizedBox()),
-          ],
+    return PhoneVerificationPageScope(
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(kSpacingL),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(kSpacingL),
+                child: PhoneVerificationPageTitle(phone: widget.phone),
+              ),
+              const SizedBox(height: kSpacingXL),
+              const CodeInputField(codeLength: 6),
+              const Expanded(child: SizedBox()),
+            ],
+          ),
         ),
       ),
     );
