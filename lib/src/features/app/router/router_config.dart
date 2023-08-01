@@ -8,7 +8,7 @@ import 'package:loans/src/features/profile/widgets/pages/profile/profile_page.da
 import 'package:loans/src/features/session/widgets/pages/new_session/new_session_page.dart';
 
 final $RouterConfig = GoRouter(
-  initialLocation: '/login',
+  initialLocation: '/new-session',
   routes: [
     StatefulShellRoute(
       navigatorContainerBuilder: (context, navigationShell, children) => NavigationManager(
@@ -65,9 +65,4 @@ final $RouterConfig = GoRouter(
 
 extension GoRouterGetter on BuildContext {
   GoRouter get router => GoRouter.of(this);
-
-  void goVerificationPage<T>(String phone) => go(
-        '/login/phone-verification',
-        extra: {'phone': phone},
-      );
 }
