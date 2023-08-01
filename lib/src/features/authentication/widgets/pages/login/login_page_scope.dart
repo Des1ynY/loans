@@ -11,6 +11,17 @@ class LoginPageScope extends StatefulWidget {
 
   @override
   State<LoginPageScope> createState() => _LoginPageScopeState();
+
+  static SendVerificationCodeBloc sendVerificationCodeBlocOf(
+    BuildContext context, {
+    bool listen = true,
+  }) {
+    return PhoneAuthScope.sendVerificationCodeBlocOf(context, listen: listen);
+  }
+
+  static void sendVerificationCode(BuildContext context, String phone) {
+    return PhoneAuthScope.sendVerificationCode(context, phone);
+  }
 }
 
 class _LoginPageScopeState extends State<LoginPageScope> {

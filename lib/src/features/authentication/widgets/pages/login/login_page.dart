@@ -16,6 +16,12 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _phoneFieldController = TextEditingController();
 
+  void _sendVerificationCode() {
+    final phone = '+7' + _phoneFieldController.text.replaceAll(' ', '');
+
+    LoginPageScope.sendVerificationCode(context, phone);
+  }
+
   @override
   Widget build(BuildContext context) {
     return LoginPageScope(
@@ -31,11 +37,14 @@ class _LoginPageState extends State<LoginPage> {
                   child: LoginPageTitle(),
                 ),
                 const SizedBox(height: kSpacingXL),
-                PhoneInputField(controller: _phoneFieldController),
+                PhoneInputField(
+                  controller: _phoneFieldController,
+                  onSubmitted: (_) => _sendVerificationCode(),
+                ),
                 const SizedBox(height: kSpacingL),
                 SendCodeButton(
                   phoneFieldController: _phoneFieldController,
-                  onPressed: () {},
+                  onPressed: _sendVerificationCode,
                 ),
                 const Expanded(child: SizedBox()),
                 const Padding(

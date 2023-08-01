@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loans/src/features/authentication/bloc/send_verification_code_bloc/send_verification_code_bloc.dart';
+import 'package:loans/src/features/authentication/widgets/pages/login/login_page_scope.dart';
 import 'package:loans/src/features/authentication/widgets/pages/login/utils/phone_formatter.dart';
-import 'package:loans/src/features/authentication/widgets/phone_auth_scope.dart';
 import 'package:loans/src/shared/l10n/l10n.dart';
 import 'package:ui_kit/ui_kit.dart';
 
@@ -39,17 +39,15 @@ class _SendCodeButtonState extends State<SendCodeButton> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SendVerificationCodeBloc, SendVerificationCodeState>(
-      bloc: PhoneAuthScope.sendVerificationCodeBlocOf(context),
+      bloc: LoginPageScope.sendVerificationCodeBlocOf(context),
       builder: (context, state) => AbsorbPointer(
         absorbing: state.isProcessing,
         child: Button.large(
           onPressed: _hasValidPhone ? widget.onPressed : null,
-          leading: state.isProcessing
-              ? LoadingIndicator(
-                  color: context.surfaceColors.primary,
-                )
-              : null,
           caption: !state.isProcessing ? context.locales.send_code_button : null,
+          leading: state.isProcessing
+              ? LoadingIndicator(size: 18, color: context.surfaceColors.primary)
+              : null,
         ),
       ),
     );
