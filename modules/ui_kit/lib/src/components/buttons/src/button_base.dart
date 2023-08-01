@@ -47,13 +47,13 @@ class ButtonBase extends StatelessWidget {
         children: [
           if (leading != null) ...[
             leading!,
-            const SizedBox(width: kSpacingXS),
           ],
           if (caption != null) ...[
+            const SizedBox(width: kSpacingXS),
             Text(caption!, style: captionStyle.copyWith(color: captionColor)),
+            const SizedBox(width: kSpacingXS),
           ],
           if (trailing != null) ...[
-            const SizedBox(width: kSpacingXS),
             trailing!,
           ],
         ],
