@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 
+import '../../../../spacing.dart';
 import '../../buttons/src/button_base.dart';
 import '../../buttons/src/button_style.dart';
 import 'base_dialog.dart';
@@ -44,6 +45,7 @@ class TwoOptionsDialog extends StatelessWidget {
             backgroundColor: accentColor,
             captionColor: captionColor,
           ),
+          if (cancel != null) const SizedBox(height: kSpacingS)
         ],
         if (cancel != null) ...[
           ButtonBase(
