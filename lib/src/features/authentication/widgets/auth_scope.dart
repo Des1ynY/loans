@@ -1,7 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/widgets.dart';
 import 'package:loans/src/features/app/widgets/app_scope.dart';
-import 'package:loans/src/features/authentication/bloc/auth_bloc.dart';
+import 'package:loans/src/features/authentication/bloc/auth_bloc/auth_bloc.dart';
 
 class AuthScope extends StatefulWidget {
   final Widget child;
@@ -11,16 +11,16 @@ class AuthScope extends StatefulWidget {
   @override
   State<AuthScope> createState() => _AuthScopeState();
 
-  static AuthBloc authBlocOf(BuildContext context, {bool listen = false}) {
+  static AuthBloc authBlocOf(BuildContext context, {bool listen = true}) {
     return _InheritedAuthScope.of(context, listen: listen).authBloc;
   }
 
   static void login(BuildContext context, User user) {
-    return authBlocOf(context).add(AuthEvent.login(user));
+    return authBlocOf(context, listen: false).add(AuthEvent.login(user));
   }
 
   static void logout(BuildContext context) {
-    return authBlocOf(context).add(const AuthEvent.logout());
+    return authBlocOf(context, listen: false).add(const AuthEvent.logout());
   }
 }
 
