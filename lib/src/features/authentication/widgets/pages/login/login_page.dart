@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loans/src/features/authentication/widgets/pages/login/widgets/login_warning.dart';
+import 'package:loans/src/features/authentication/widgets/pages/login/widgets/page_title.dart';
 import 'package:loans/src/features/authentication/widgets/pages/login/widgets/phone_input_field.dart';
 import 'package:loans/src/features/authentication/widgets/pages/login/widgets/send_code_button.dart';
-import 'package:loans/src/features/authentication/widgets/pages/login/widgets/welcome_text.dart';
 import 'package:ui_kit/spacing.dart';
 
 class LoginPage extends StatefulWidget {
@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: kSpacingXL),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: kSpacingL),
-                child: LoginWelcomeText(),
+                child: LoginPageTitle(),
               ),
               const SizedBox(height: kSpacingXL),
               PhoneInputField(controller: _phoneFieldController),

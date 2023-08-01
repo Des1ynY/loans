@@ -1,11 +1,27 @@
 {
     "@@locale": "ru",
     "@@LOGIN_PAGE": "",
-    "welcome_first_row": "Войдите",
-    "welcome_second_row": "с помощью",
-    "welcome_third_row": "телефона",
+    "login_page_title_first_row": "Войдите",
+    "login_page_title_second_row": "с помощью",
+    "login_page_title_third_row": "телефона",
     "send_code_button": "Продолжить",
     "login_warning": "Нажимая кнопку «Продолжить», вы соглашаетесь на обработку персональных данных в соответсвии с Офертой и Политикой обработки персональных данных",
     "login_warning_offer": "Офертой",
-    "login_warning_privacy": "Политикой обработки персональных данных"
+    "login_warning_privacy": "Политикой обработки персональных данных",
+    "@@PHONE_VERIFICATION_PAGE": "",
+    "phone_verification_page_title": "Введите код",
+    "phone_verification_page_subtitle": "Мы отправили СМС с кодом провеки на ваш телефон {phone}",
+    "@phone_verification_page_subtitle": {
+        "placeholders": {
+            "phone": {}
+        }
+    },
+    "resend_code_button": "Не получили код?",
+    "resend_code_countdown": "{time} сек.",
+    "@resend_code_countdown": {
+        "placeholders": {
+            "time": {}
+        }
+    },
+    "resend_code_request": "Прислать еще"
 }
