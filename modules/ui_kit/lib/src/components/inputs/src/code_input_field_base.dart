@@ -116,7 +116,7 @@ class _CodeSymbolCell extends StatelessWidget {
         ),
         decoration: InputDecoration(
           isDense: true,
-          border: AdaptiveUnderlineBorder(context.colors),
+          border: AdaptiveUnderlineBorder(context.colors, controller),
           contentPadding: const EdgeInsets.only(bottom: kSpacingS),
         ),
       ),

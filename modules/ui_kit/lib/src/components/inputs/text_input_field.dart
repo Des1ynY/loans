@@ -3,9 +3,18 @@ import 'package:flutter/services.dart';
 
 import '../../../spacing.dart';
 import '../../../theme.dart';
+import 'src/code_input_field_base.dart';
 import 'src/text_input_field_base.dart';
 
 export 'src/text_input_field_base.dart' show TextInputCallback;
+
+class CodeInputField extends CodeInputFieldBase {
+  const CodeInputField({
+    required super.codeLength,
+    super.onSubmitted,
+    super.key,
+  });
+}
 
 class TextInputField extends TextInputFieldBase {
   const TextInputField({

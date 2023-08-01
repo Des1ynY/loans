@@ -73,7 +73,7 @@ class TextInputFieldBase extends StatelessWidget {
       style: context.bodyStyles.xl.copyWith(color: context.textColors.primary, height: 1),
       decoration: InputDecoration(
         isDense: true,
-        border: AdaptiveUnderlineBorder(context.colors),
+        border: AdaptiveUnderlineBorder(context.colors, controller),
         contentPadding: const EdgeInsets.only(bottom: kSpacingS),
         hintText: hintText,
         hintStyle: context.bodyStyles.xl.copyWith(color: hintTextColor),
