@@ -34,7 +34,7 @@ class _LoginPageScopeState extends State<LoginPageScope> {
           listener: (context, state) => state.mapOrNull(
             success: (state) => context.router.go(
               '/login/phone-verification',
-              extra: {'phone': state.phone},
+              extra: state.phone,
             ),
           ),
           child: widget.child,

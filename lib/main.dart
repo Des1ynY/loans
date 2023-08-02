@@ -7,12 +7,14 @@ import 'package:loans/src/features/app/widgets/app.dart';
 import 'package:loans/src/features/app/widgets/app_scope.dart';
 import 'package:loans/src/features/authentication/data/auth_repository.dart';
 import 'package:loans/src/features/authentication/widgets/auth_scope.dart';
+import 'package:loans/src/shared/utils/logger/bloc_observer.dart';
 
 Future<void> main() async {
   final binding = WidgetsFlutterBinding.ensureInitialized()..deferFirstFrame();
 
   await Firebase.initializeApp();
 
+  Bloc.observer = const BlocLogger();
   Bloc.transformer = concurrency.sequential();
 
   // Initializing dependencies

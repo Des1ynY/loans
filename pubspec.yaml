@@ -30,6 +30,9 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+  # Logging
+  mark: 0.3.0
+
   # UI
   mask_text_input_formatter: 2.5.0
 

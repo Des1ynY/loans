@@ -6,9 +6,11 @@ import 'package:loans/src/features/authentication/widgets/pages/phone_verificati
 import 'package:loans/src/features/loans/widgets/pages/active_loans/active_loans_page.dart';
 import 'package:loans/src/features/profile/widgets/pages/profile/profile_page.dart';
 import 'package:loans/src/features/session/widgets/pages/new_session/new_session_page.dart';
+import 'package:loans/src/shared/utils/logger/navigator_observer.dart';
 
 final $RouterConfig = GoRouter(
   initialLocation: '/login',
+  observers: [NavigationLogger()],
   routes: [
     StatefulShellRoute(
       navigatorContainerBuilder: (context, navigationShell, children) => NavigationManager(
@@ -50,10 +52,11 @@ final $RouterConfig = GoRouter(
         GoRoute(
           path: 'phone-verification',
           builder: (context, state) {
-            if (state.extra == null) throw Exception('Phone must be provided with extra');
+            final phone = state.extra;
 
-            // ignore: cast_nullable_to_non_nullable
-            final phone = (state.extra as Map<String, dynamic>)['phone'] as String;
+            if (phone == null || phone is! String) {
+              throw Exception('Phone must be provided with extra');
+            }
 
             return PhoneVerificationPage(phone: phone);
           },

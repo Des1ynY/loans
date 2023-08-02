@@ -443,6 +443,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  mark:
+    dependency: "direct main"
+    description:
+      name: mark
+      sha256: cb1467e7c173e284c8682ac0dece33f56a58a529cd0548630579d5b90e043d0d
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.0"
   mask_text_input_formatter:
     dependency: "direct main"
     description:
