@@ -46,7 +46,7 @@ class _SendCodeButtonState extends State<SendCodeButton> {
           onPressed: _hasValidPhone ? widget.onPressed : null,
           caption: !state.isProcessing ? context.locales.send_code_button : null,
           leading: state.isProcessing
-              ? LoadingIndicator(size: 18, color: context.surfaceColors.primary)
+              ? LoadingIndicator(size: 18, color: context.surfaceColors.primary, strokeWidth: 2)
               : null,
         ),
       ),

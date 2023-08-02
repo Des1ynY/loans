@@ -58,7 +58,13 @@ class _ResendCodeButtonState extends State<ResendCodeButton> {
               )
             ] else ...[
               if (state.isProcessing) ...[
-                WidgetSpan(child: LoadingIndicator(size: 18, color: unavailableColor)),
+                WidgetSpan(
+                  child: LoadingIndicator(
+                    size: 18,
+                    color: unavailableColor,
+                    strokeWidth: 1,
+                  ),
+                ),
               ] else ...[
                 TextSpan(
                   text: context.locales.resend_code_countdown(_countdown.timeLeft.inSeconds),
