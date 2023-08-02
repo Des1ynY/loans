@@ -24,35 +24,33 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return LoginPageScope(
-      child: Scaffold(
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(kSpacingL),
-            child: Column(
-              children: [
-                const SizedBox(height: kSpacingXL),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: kSpacingL),
-                  child: LoginPageTitle(),
-                ),
-                const SizedBox(height: kSpacingXL),
-                PhoneInputField(
-                  controller: _phoneFieldController,
-                  onSubmitted: (_) => _sendVerificationCode(),
-                ),
-                const SizedBox(height: kSpacingL),
-                SendCodeButton(
-                  phoneFieldController: _phoneFieldController,
-                  onPressed: _sendVerificationCode,
-                ),
-                const Expanded(child: SizedBox()),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: kSpacingL),
-                  child: LoginWarning(),
-                ),
-              ],
-            ),
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(kSpacingL),
+          child: Column(
+            children: [
+              const SizedBox(height: kSpacingXL),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: kSpacingL),
+                child: LoginPageTitle(),
+              ),
+              const SizedBox(height: kSpacingXL),
+              PhoneInputField(
+                controller: _phoneFieldController,
+                onSubmitted: (_) => _sendVerificationCode(),
+              ),
+              const SizedBox(height: kSpacingL),
+              SendCodeButton(
+                phoneFieldController: _phoneFieldController,
+                onPressed: _sendVerificationCode,
+              ),
+              const Expanded(child: SizedBox()),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: kSpacingL),
+                child: LoginWarning(),
+              ),
+            ],
           ),
         ),
       ),

@@ -82,7 +82,7 @@ class _DialogBackground extends StatelessWidget {
       color: Colors.transparent,
       shape: _shape,
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3, tileMode: TileMode.mirror),
+        filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
         child: Padding(
           padding: const EdgeInsets.only(top: 1),
           child: DecoratedBox(
