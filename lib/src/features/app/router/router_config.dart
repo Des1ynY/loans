@@ -4,6 +4,7 @@ import 'package:loans/src/features/app/router/navigation_manager.dart';
 import 'package:loans/src/features/authentication/widgets/pages/login/login_page.dart';
 import 'package:loans/src/features/authentication/widgets/pages/login/login_page_scope.dart';
 import 'package:loans/src/features/authentication/widgets/pages/phone_verification/phone_verification_page.dart';
+import 'package:loans/src/features/authentication/widgets/pages/phone_verification/phone_verification_page_scope.dart';
 import 'package:loans/src/features/loans/widgets/pages/active_loans/active_loans_page.dart';
 import 'package:loans/src/features/profile/widgets/pages/profile/profile_page.dart';
 import 'package:loans/src/features/session/widgets/pages/new_session/new_session_page.dart';
@@ -59,7 +60,10 @@ final $RouterConfig = GoRouter(
               throw Exception('Phone must be provided with extra');
             }
 
-            return PhoneVerificationPage(phone: phone);
+            return PhoneVerificationPageScope(
+              phone: phone,
+              child: const PhoneVerificationPage(),
+            );
           },
         ),
       ],

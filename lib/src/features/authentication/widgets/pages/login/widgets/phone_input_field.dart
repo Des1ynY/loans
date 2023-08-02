@@ -27,6 +27,7 @@ class PhoneInputField extends StatelessWidget {
           child: TextInputField(
             controller: controller,
             hintText: '000 000 0000',
+            autofocus: true,
             keyboardType: TextInputType.phone,
             inputAction: TextInputAction.send,
             onSubmitted: onSubmitted,

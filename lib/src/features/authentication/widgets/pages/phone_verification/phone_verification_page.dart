@@ -1,35 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:loans/src/features/authentication/widgets/pages/phone_verification/phone_verification_page_scope.dart';
+import 'package:loans/src/features/authentication/widgets/pages/phone_verification/widgets/code_input_field.dart';
 import 'package:loans/src/features/authentication/widgets/pages/phone_verification/widgets/page_title.dart';
-import 'package:ui_kit/ui_kit.dart';
+import 'package:loans/src/features/authentication/widgets/pages/phone_verification/widgets/resend_code_button.dart';
+import 'package:ui_kit/ui_kit.dart' hide CodeInputField;
 
-class PhoneVerificationPage extends StatefulWidget {
-  final String phone;
+class PhoneVerificationPage extends StatelessWidget {
+  const PhoneVerificationPage({super.key});
 
-  const PhoneVerificationPage({required this.phone, super.key});
-
-  @override
-  State<PhoneVerificationPage> createState() => _PhoneVerificationPageState();
-}
-
-class _PhoneVerificationPageState extends State<PhoneVerificationPage> {
   @override
   Widget build(BuildContext context) {
-    return PhoneVerificationPageScope(
-      child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(kSpacingL),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(kSpacingL),
-                child: PhoneVerificationPageTitle(phone: widget.phone),
-              ),
-              const SizedBox(height: kSpacingXL),
-              const CodeInputField(codeLength: 6),
-              const Expanded(child: SizedBox()),
-            ],
-          ),
+    return const Scaffold(
+      body: Padding(
+        padding: EdgeInsets.all(kSpacingL),
+        child: Column(
+          children: [
+            SizedBox(height: kSpacingXXXL),
+            Padding(
+              padding: EdgeInsets.all(kSpacingL),
+              child: PhoneVerificationPageTitle(),
+            ),
+            SizedBox(height: kSpacingXL),
+            CodeInputField(),
+            Expanded(child: SizedBox()),
+            ResendCodeButton(),
+          ],
         ),
       ),
     );

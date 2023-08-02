@@ -1,11 +1,23 @@
 import 'package:flutter/widgets.dart';
+import 'package:loans/src/features/authentication/widgets/pages/phone_verification/phone_verification_page_scope.dart';
 import 'package:loans/src/shared/l10n/l10n.dart';
 import 'package:ui_kit/ui_kit.dart';
 
-class PhoneVerificationPageTitle extends StatelessWidget {
-  final String phone;
+class PhoneVerificationPageTitle extends StatefulWidget {
+  const PhoneVerificationPageTitle({super.key});
 
-  const PhoneVerificationPageTitle({required this.phone, super.key});
+  @override
+  State<PhoneVerificationPageTitle> createState() => _PhoneVerificationPageTitleState();
+}
+
+class _PhoneVerificationPageTitleState extends State<PhoneVerificationPageTitle> {
+  late String phone;
+
+  @override
+  void didChangeDependencies() {
+    phone = PhoneVerificationPageScope.phoneOf(context);
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -8,13 +8,25 @@ import 'src/text_input_field_base.dart';
 
 export 'src/text_input_field_base.dart' show TextInputCallback;
 
+// Code inputs
+
 class CodeInputField extends CodeInputFieldBase {
   const CodeInputField({
     required super.codeLength,
-    super.onSubmitted,
+    super.controller,
+    super.keyboardType,
+    super.inputAction,
+    super.autofocus,
     super.key,
   });
+
+  @override
+  CodeInputFieldState createState() => CodeInputFieldState();
 }
+
+class CodeInputFieldState extends CodeInputFieldBaseState {}
+
+// Text inputs
 
 class TextInputField extends TextInputFieldBase {
   const TextInputField({

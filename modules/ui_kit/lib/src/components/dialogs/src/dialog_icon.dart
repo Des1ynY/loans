@@ -26,7 +26,7 @@ class DialogIcon extends StatelessWidget {
         child: Center(
           child: Icon(
             icon,
-            size: 24,
+            size: 36,
             color: iconColor ?? context.surfaceColors.primary,
           ),
         ),

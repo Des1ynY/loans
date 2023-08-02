@@ -7,23 +7,45 @@ import 'text_input_field_base.dart';
 
 class CodeInputFieldBase extends StatefulWidget {
   final int codeLength;
-  final TextInputCallback<void>? onSubmitted;
+
+  final TextEditingController? controller;
+  final TextInputType? keyboardType;
+  final TextInputAction? inputAction;
+
+  final bool autofocus;
 
   const CodeInputFieldBase({
     required this.codeLength,
-    this.onSubmitted,
+    this.controller,
+    this.keyboardType,
+    this.inputAction,
+    this.autofocus = false,
     super.key,
   });
 
   @override
-  State<CodeInputFieldBase> createState() => _CodeInputFieldBaseState();
+  CodeInputFieldBaseState createState() => CodeInputFieldBaseState();
 }
 
-class _CodeInputFieldBaseState extends State<CodeInputFieldBase> {
+class CodeInputFieldBaseState extends State<CodeInputFieldBase> {
   late final List<TextEditingController> _cellControllers;
   late final List<FocusNode> _cellsFocuses;
+  late final TextEditingController _controller;
 
-  final _controller = TextEditingController();
+  void requestFocus() {
+    final currentIndex = _controller.text.length;
+    final nextCell = _cellsFocuses.elementAtOrNull(currentIndex) ?? _cellsFocuses.last;
+
+    FocusScope.of(context).requestFocus(nextCell);
+  }
+
+  void clear() {
+    FocusScope.of(context).unfocus();
+    for (final controller in _cellControllers) {
+      controller.clear();
+    }
+    _controller.clear();
+  }
 
   void _updateActiveCell() {
     final currentIndex = _controller.text.length;
@@ -32,14 +54,9 @@ class _CodeInputFieldBaseState extends State<CodeInputFieldBase> {
 
     final nextCell = _cellsFocuses.elementAtOrNull(currentIndex);
 
-    if (nextCell != null) return FocusScope.of(context).requestFocus(nextCell);
+    if (nextCell != null) FocusScope.of(context).requestFocus(nextCell);
 
-    widget.onSubmitted?.call(_controller.text);
-    FocusScope.of(context).unfocus();
-    for (final conroller in _cellControllers) {
-      conroller.clear();
-    }
-    _controller.clear();
+    setState(() {});
   }
 
   @override
@@ -47,7 +64,13 @@ class _CodeInputFieldBaseState extends State<CodeInputFieldBase> {
     super.initState();
     _cellControllers = List.generate(widget.codeLength, (index) => TextEditingController());
     _cellsFocuses = List.generate(widget.codeLength, (index) => FocusNode());
+
+    _controller = widget.controller ?? TextEditingController();
     _controller.addListener(_updateActiveCell);
+
+    if (widget.autofocus) {
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) => requestFocus());
+    }
   }
 
   @override
@@ -59,11 +82,17 @@ class _CodeInputFieldBaseState extends State<CodeInputFieldBase> {
         widget.codeLength,
         (index) => Padding(
           padding: EdgeInsets.only(right: index != widget.codeLength - 1 ? kSpacingXS : 0),
-          child: _CodeSymbolCell(
-            controller: _cellControllers[index],
-            focusNode: _cellsFocuses[index],
-            onChanged: (value) => _controller.text = _controller.text + (value ?? ''),
-            key: ValueKey(index),
+          child: AbsorbPointer(
+            absorbing: _controller.text.length != index,
+            child: _CodeSymbolCell(
+              key: ValueKey(index),
+              controller: _cellControllers[index],
+              focusNode: _cellsFocuses[index],
+              onChanged: (value) => _controller.text += value ?? '',
+              keyboardType: widget.keyboardType,
+              inputAction:
+                  index != widget.codeLength - 1 ? TextInputAction.none : widget.inputAction,
+            ),
           ),
         ),
       ),
@@ -77,7 +106,7 @@ class _CodeInputFieldBaseState extends State<CodeInputFieldBase> {
       _cellsFocuses[i].dispose();
     }
 
-    _controller.dispose();
+    if (widget.controller == null) _controller.dispose();
     super.dispose();
   }
 }
@@ -87,12 +116,26 @@ class _CodeSymbolCell extends StatelessWidget {
   final FocusNode focusNode;
   final TextInputCallback<void> onChanged;
 
+  final TextInputType? keyboardType;
+  final TextInputAction? inputAction;
+
   const _CodeSymbolCell({
     required this.controller,
     required this.focusNode,
     required this.onChanged,
+    this.keyboardType,
+    this.inputAction,
     super.key,
   });
+
+  Widget? _buildCounter(
+    BuildContext context, {
+    required int currentLength,
+    required bool isFocused,
+    required int? maxLength,
+  }) {
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,6 +146,9 @@ class _CodeSymbolCell extends StatelessWidget {
         focusNode: focusNode,
         maxLength: 1,
         cursorWidth: 1,
+        keyboardType: keyboardType,
+        textInputAction: inputAction,
+        buildCounter: _buildCounter,
         textAlign: TextAlign.center,
         cursorColor: context.surfaceColors.invert,
         onChanged: onChanged,
