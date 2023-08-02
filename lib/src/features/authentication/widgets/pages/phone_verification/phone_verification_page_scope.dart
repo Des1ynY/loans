@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loans/src/features/app/router/router_config.dart';
+import 'package:loans/src/features/authentication/bloc/auth_bloc/auth_bloc.dart';
 import 'package:loans/src/features/authentication/bloc/phone_login_bloc/phone_login_bloc.dart';
 import 'package:loans/src/features/authentication/bloc/send_verification_code_bloc/send_verification_code_bloc.dart';
 import 'package:loans/src/features/authentication/widgets/auth_scope.dart';
@@ -85,6 +86,12 @@ class _PhoneVerificationPageScopeState extends State<PhoneVerificationPageScope>
               bloc: PhoneAuthScope.sendVerificationCodeBlocOf(context),
               listener: (context, state) => state.mapOrNull(
                 error: (state) => _showWarningDialog(),
+              ),
+            ),
+            BlocListener<AuthBloc, AuthState>(
+              bloc: AuthScope.authBlocOf(context),
+              listener: (context, state) => state.mapOrNull(
+                authenticated: (state) => context.router.go('/new-session'),
               ),
             ),
           ],
