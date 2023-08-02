@@ -80,7 +80,7 @@ const $MainColorsScheme = ColorsScheme(
     secondary: Color(0xFF242426),
     tertiary: Color(0x80242426),
     invert: Color(0xFFFFFFFF),
-    danger: Color(0xFFE9F336),
+    danger: Color(0xFFE93F36),
     success: Color(0xFF07B018),
     link: Color(0xFF1887FF),
     quaternary: Color(0xCC0A0A0A),

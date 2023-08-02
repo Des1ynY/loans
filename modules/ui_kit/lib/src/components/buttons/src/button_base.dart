@@ -15,6 +15,9 @@ class ButtonBase extends StatelessWidget {
   final ButtonStyle style;
   final ButtonSize size;
 
+  final Color? backgroundColor;
+  final Color? captionColor;
+
   const ButtonBase({
     required this.onPressed,
     required this.style,
@@ -22,6 +25,8 @@ class ButtonBase extends StatelessWidget {
     this.caption,
     this.leading,
     this.trailing,
+    this.backgroundColor,
+    this.captionColor,
     super.key,
   });
 
@@ -40,21 +45,20 @@ class ButtonBase extends StatelessWidget {
       hoverElevation: 0,
       highlightElevation: 0,
       constraints: size.buttonConstraints,
-      fillColor: backgroundColor,
-      splashColor: Colors.transparent,
+      fillColor: this.backgroundColor ?? backgroundColor,
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(kRadiusM)),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           if (leading != null) ...[
             leading!,
-            const SizedBox(width: kSpacingXS),
           ],
           if (caption != null) ...[
-            Text(caption!, style: captionStyle.copyWith(color: captionColor)),
+            const SizedBox(width: kSpacingXS),
+            Text(caption!, style: captionStyle.copyWith(color: this.captionColor ?? captionColor)),
+            const SizedBox(width: kSpacingXS),
           ],
           if (trailing != null) ...[
-            const SizedBox(width: kSpacingXS),
             trailing!,
           ],
         ],

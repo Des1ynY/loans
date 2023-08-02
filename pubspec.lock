@@ -340,6 +340,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.3.1"
+  flutter_localizations:
+    dependency: "direct main"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_test:
     dependency: transitive
     description: flutter
@@ -398,6 +403,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      sha256: a3715e3bc90294e971cb7dc063fbf3cd9ee0ebf8604ffeafabd9e6f16abbdbe6
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.18.0"
   io:
     dependency: transitive
     description:
@@ -430,6 +443,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  mark:
+    dependency: "direct main"
+    description:
+      name: mark
+      sha256: cb1467e7c173e284c8682ac0dece33f56a58a529cd0548630579d5b90e043d0d
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.0"
+  mask_text_input_formatter:
+    dependency: "direct main"
+    description:
+      name: mask_text_input_formatter
+      sha256: "2056a9b8303f71003b9c06c6f71443504f3ca9f4b79b1aa40c9f0f62f9d312cf"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.5.0"
   matcher:
     dependency: transitive
     description:
@@ -675,6 +704,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.1"
+  theme_tailor_annotation:
+    dependency: transitive
+    description:
+      name: theme_tailor_annotation
+      sha256: e75cf627202816cf4b45910658205959524860b99951bd0d370e760bf3546424
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   time:
     dependency: transitive
     description:

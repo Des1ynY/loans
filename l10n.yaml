@@ -1,0 +1,8 @@
+output-class: Locales
+template-arb-file: app_ru.arb
+arb-dir: lib/src/shared/l10n/arb
+output-dir: lib/src/shared/l10n/gen
+preferred-supported-locales: [ru]
+synthetic-package: false
+nullable-getter: false
+format: true
