@@ -1,5 +1,6 @@
 {
     "@@locale": "ru",
+    "close": "Закрыть",
     "@@LOGIN_PAGE": "",
     "login_page_title_first_row": "Войдите",
     "login_page_title_second_row": "с помощью",
@@ -23,5 +24,8 @@
             "time": {}
         }
     },
-    "resend_code_request": "Прислать еще"
+    "resend_code_request": "Прислать еще",
+    "@@ERRORS": "",
+    "error_dialog_title": "Ошибка",
+    "error_unknown": "Возникла непредвиденная ошибка. Пожалуйста, попробуйте еще раз или повторите позже"
 }
