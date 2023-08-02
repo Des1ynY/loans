@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Icons;
 import 'package:loans/src/features/authentication/widgets/pages/login/login_page_scope.dart';
 import 'package:loans/src/features/authentication/widgets/pages/login/widgets/login_warning.dart';
 import 'package:loans/src/features/authentication/widgets/pages/login/widgets/page_title.dart';
 import 'package:loans/src/features/authentication/widgets/pages/login/widgets/phone_input_field.dart';
 import 'package:loans/src/features/authentication/widgets/pages/login/widgets/send_code_button.dart';
-import 'package:ui_kit/spacing.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

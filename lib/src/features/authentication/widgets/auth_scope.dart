@@ -25,30 +25,26 @@ class AuthScope extends StatefulWidget {
 }
 
 class _AuthScopeState extends State<AuthScope> {
-  late AuthBloc _authBloc;
+  AuthBloc? _authBloc;
 
   @override
   void didChangeDependencies() {
-    try {
-      _authBloc.close();
-    } finally {
-      _authBloc = AuthBloc(initialUser: AppScope.authRepositoryOf(context).currentUser);
-    }
-
+    _authBloc?.close();
+    _authBloc = AuthBloc(initialUser: AppScope.authRepositoryOf(context).currentUser);
     super.didChangeDependencies();
   }
 
   @override
   Widget build(BuildContext context) {
     return _InheritedAuthScope(
-      authBloc: _authBloc,
+      authBloc: _authBloc!,
       child: widget.child,
     );
   }
 
   @override
   void dispose() {
-    _authBloc.close();
+    _authBloc?.close();
     super.dispose();
   }
 }

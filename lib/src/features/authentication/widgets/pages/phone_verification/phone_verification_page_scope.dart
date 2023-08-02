@@ -17,15 +17,17 @@ class _PhoneVerificationPageScopeState extends State<PhoneVerificationPageScope>
   @override
   Widget build(BuildContext context) {
     return PhoneAuthScope(
-      child: MultiBlocListener(
-        listeners: [
-          BlocListener<PhoneLoginBloc, PhoneLoginState>(
-            listener: (context, state) => state.mapOrNull(
-              success: (state) => AuthScope.login(context, state.user),
+      child: Builder(
+        builder: (context) => MultiBlocListener(
+          listeners: [
+            BlocListener<PhoneLoginBloc, PhoneLoginState>(
+              listener: (context, state) => state.mapOrNull(
+                success: (state) => AuthScope.login(context, state.user),
+              ),
             ),
-          ),
-        ],
-        child: widget.child,
+          ],
+          child: widget.child,
+        ),
       ),
     );
   }

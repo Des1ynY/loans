@@ -28,15 +28,17 @@ class _LoginPageScopeState extends State<LoginPageScope> {
   @override
   Widget build(BuildContext context) {
     return PhoneAuthScope(
-      child: BlocListener<SendVerificationCodeBloc, SendVerificationCodeState>(
-        bloc: PhoneAuthScope.sendVerificationCodeBlocOf(context),
-        listener: (context, state) => state.mapOrNull(
-          success: (state) => context.router.go(
-            '/login/phone-verification',
-            extra: {'phone': state.phone},
+      child: Builder(
+        builder: (context) => BlocListener<SendVerificationCodeBloc, SendVerificationCodeState>(
+          bloc: PhoneAuthScope.sendVerificationCodeBlocOf(context),
+          listener: (context, state) => state.mapOrNull(
+            success: (state) => context.router.go(
+              '/login/phone-verification',
+              extra: {'phone': state.phone},
+            ),
           ),
+          child: widget.child,
         ),
-        child: widget.child,
       ),
     );
   }

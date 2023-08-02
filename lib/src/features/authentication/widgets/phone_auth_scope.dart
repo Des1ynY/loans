@@ -48,19 +48,17 @@ class PhoneAuthScope extends StatefulWidget {
 }
 
 class _PhoneAuthScopeState extends State<PhoneAuthScope> {
-  late SendVerificationCodeBloc _sendVerificationCodeBloc;
-  late PhoneLoginBloc _phoneLoginBloc;
+  SendVerificationCodeBloc? _sendVerificationCodeBloc;
+  PhoneLoginBloc? _phoneLoginBloc;
 
   @override
   void didChangeDependencies() {
-    try {
-      _sendVerificationCodeBloc.close();
-      _phoneLoginBloc.close();
-    } finally {
-      final authRepository = AppScope.authRepositoryOf(context);
-      _sendVerificationCodeBloc = SendVerificationCodeBloc(repository: authRepository);
-      _phoneLoginBloc = PhoneLoginBloc(repository: authRepository);
-    }
+    _sendVerificationCodeBloc?.close();
+    _phoneLoginBloc?.close();
+
+    final authRepository = AppScope.authRepositoryOf(context);
+    _sendVerificationCodeBloc = SendVerificationCodeBloc(repository: authRepository);
+    _phoneLoginBloc = PhoneLoginBloc(repository: authRepository);
 
     super.didChangeDependencies();
   }
@@ -68,16 +66,16 @@ class _PhoneAuthScopeState extends State<PhoneAuthScope> {
   @override
   Widget build(BuildContext context) {
     return _InheritedPhoneAuthScope(
-      sendVerificationCodeBloc: _sendVerificationCodeBloc,
-      phoneLoginBloc: _phoneLoginBloc,
+      sendVerificationCodeBloc: _sendVerificationCodeBloc!,
+      phoneLoginBloc: _phoneLoginBloc!,
       child: widget.child,
     );
   }
 
   @override
   void dispose() {
-    _sendVerificationCodeBloc.close();
-    _phoneLoginBloc.close();
+    _sendVerificationCodeBloc?.close();
+    _phoneLoginBloc?.close();
     super.dispose();
   }
 }
