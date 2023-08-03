@@ -13,8 +13,8 @@ dependencies:
   # Modules
   core:
     path: modules/core
-  api:
-    path: modules/api
+  firebase_api:
+    path: modules/firebase_api
   ui_kit:
     path: modules/ui_kit
 

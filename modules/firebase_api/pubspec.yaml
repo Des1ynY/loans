@@ -1,4 +1,4 @@
-name: api
+name: firebase_api
 description: Application data layer implemented with Firebase.
 publish_to: none
 
