@@ -34,7 +34,7 @@ class IconButtonBase extends StatelessWidget {
       highlightElevation: 0,
       constraints: size.buttonConstraints,
       fillColor: backgroundColor,
-      splashColor: Colors.transparent,
+      splashColor: context.colors.transparent,
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(kRadiusM)),
       child: icon,
     );

@@ -91,3 +91,41 @@ class WarningDialog extends TwoOptionsDialog {
     );
   }
 }
+
+class LoaderDialog extends LoadingIndicator {
+  const LoaderDialog({
+    super.foregroundColor,
+    super.backgroundColor,
+    super.size,
+    super.strokeWidth,
+    super.repeatDuration,
+    super.key,
+  });
+
+  static const largeSize = 108.0;
+  static const mediumSize = 64.0;
+  static const smallSize = LoadingIndicator.defaultSize;
+
+  static void show(
+    BuildContext context, {
+    Color? foregroundColor,
+    Color? backgroundColor,
+    double size = LoaderDialog.largeSize,
+    double strokeWidth = LoadingIndicator.defaultStrokeWidth,
+    Duration repeatDuration = LoadingIndicator.defaultRepeatDuration,
+    bool dismissable = false,
+  }) {
+    showDialog<void>(
+      context: context,
+      barrierDismissible: dismissable,
+      barrierColor: context.surfaceColors.quaternary,
+      builder: (context) => LoaderDialog(
+        foregroundColor: foregroundColor,
+        backgroundColor: backgroundColor,
+        size: size,
+        strokeWidth: strokeWidth,
+        repeatDuration: repeatDuration,
+      ),
+    );
+  }
+}

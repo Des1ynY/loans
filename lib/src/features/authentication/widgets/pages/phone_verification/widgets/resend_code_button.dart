@@ -61,7 +61,8 @@ class _ResendCodeButtonState extends State<ResendCodeButton> {
                 WidgetSpan(
                   child: LoadingIndicator(
                     size: 18,
-                    color: unavailableColor,
+                    foregroundColor: unavailableColor,
+                    backgroundColor: context.colors.transparent,
                     strokeWidth: 1,
                   ),
                 ),

@@ -26,7 +26,6 @@ analyzer:
     always_declare_return_types: error
     always_put_control_body_on_new_line: warning
     avoid_equals_and_hash_code_on_mutable_classes: error
-    avoid_field_initializers_in_const_classes: warning
     avoid_function_literals_in_foreach_calls: warning
     avoid_returning_this: warning
     avoid_unused_constructor_parameters: warning
@@ -108,7 +107,6 @@ linter:
     - avoid_double_and_int_checks
     - avoid_equals_and_hash_code_on_mutable_classes
     - avoid_escaping_inner_quotes
-    - avoid_field_initializers_in_const_classes
     - avoid_function_literals_in_foreach_calls
     - avoid_init_to_null
     - avoid_multiple_declarations_per_line

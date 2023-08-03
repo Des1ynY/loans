@@ -78,6 +78,7 @@ class _PhoneVerificationPageScopeState extends State<PhoneVerificationPageScope>
             BlocListener<PhoneLoginBloc, PhoneLoginState>(
               bloc: PhoneAuthScope.phoneLoginBlocOf(context),
               listener: (context, state) => state.mapOrNull(
+                processing: (state) => LoaderDialog.show(context, size: LoaderDialog.mediumSize),
                 success: (state) => AuthScope.login(context, state.user),
                 error: (state) => _showWarningDialog(),
               ),

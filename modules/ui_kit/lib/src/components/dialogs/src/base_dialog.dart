@@ -79,7 +79,7 @@ class _DialogBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       clipBehavior: Clip.hardEdge,
-      color: Colors.transparent,
+      color: context.colors.transparent,
       shape: _shape,
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),

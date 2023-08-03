@@ -8,11 +8,13 @@ final class ColorsScheme extends ThemeExtension<ColorsScheme> with _$ColorsSchem
   final TextColors text;
   final BorderColors border;
 
+  final Color transparent;
+
   const ColorsScheme({
     required this.surface,
     required this.text,
     required this.border,
-  });
+  }) : transparent = const Color(0x00000000);
 }
 
 @tailorMixinComponent
