@@ -45,13 +45,15 @@ class _CodeInputFieldState extends State<CodeInputField> {
           ?..clear()
           ..requestFocus(),
       ),
-      child: ui_kit.CodeInputField(
-        codeLength: _codeLength,
-        controller: _codeFieldController,
-        inputAction: TextInputAction.done,
-        keyboardType: TextInputType.number,
-        autofocus: true,
-        key: _codeFieldKey,
+      child: FittedBox(
+        child: ui_kit.CodeInputField(
+          codeLength: _codeLength,
+          controller: _codeFieldController,
+          inputAction: TextInputAction.done,
+          keyboardType: TextInputType.number,
+          autofocus: true,
+          key: _codeFieldKey,
+        ),
       ),
     );
   }

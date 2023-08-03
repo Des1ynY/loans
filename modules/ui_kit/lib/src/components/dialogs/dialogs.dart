@@ -119,12 +119,17 @@ class LoaderDialog extends LoadingIndicator {
       context: context,
       barrierDismissible: dismissable,
       barrierColor: context.surfaceColors.quaternary,
-      builder: (context) => LoaderDialog(
-        foregroundColor: foregroundColor,
-        backgroundColor: backgroundColor,
-        size: size,
-        strokeWidth: strokeWidth,
-        repeatDuration: repeatDuration,
+      builder: (context) => Align(
+        child: Padding(
+          padding: const EdgeInsets.all(kSpacingS),
+          child: LoaderDialog(
+            foregroundColor: foregroundColor,
+            backgroundColor: backgroundColor,
+            size: size,
+            strokeWidth: strokeWidth,
+            repeatDuration: repeatDuration,
+          ),
+        ),
       ),
     );
   }

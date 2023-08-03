@@ -117,7 +117,7 @@ class _LoadingIndicatorPainter extends CustomPainter {
     final angle = 2 * pi * progress;
     final foregroundPaint = Paint()
       ..color = invertColors ? backgroundColor : foregroundColor
-      ..strokeWidth = strokeWidth
+      ..strokeWidth = strokeWidth + 0.2
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
 
