@@ -55,6 +55,9 @@ flutter_gen:
   output: lib/src/shared/assets/
 
 flutter:
+  assets:
+    - assets/images/
+
   fonts:
     - family: Inter
       fonts:

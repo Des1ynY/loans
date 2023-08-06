@@ -25,6 +25,12 @@
         }
     },
     "resend_code_request": "Прислать еще",
+    "@@VERIFICATION_OFFER_PAGE": "",
+    "verification_offer_page_title": "Приготовьте паспорт",
+    "verification_offer_subtitle": "Чтобы заключить договора займа нужно заполнить ваши паспортные данные",
+    "verification_offer_warning": "Мы надёжно защищаем персональные данные и не передаём их третьим лицам",
+    "verification_offer_start": "Заполнить",
+    "verification_offer_skip": "Пропустить",
     "@@ERRORS": "",
     "error_dialog_title": "Ошибка",
     "error_unknown": "Возникла непредвиденная ошибка. Пожалуйста, попробуйте еще раз или повторите позже"
