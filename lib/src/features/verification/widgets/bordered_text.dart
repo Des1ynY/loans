@@ -13,9 +13,12 @@ class BorderedText extends StatelessWidget {
         borderRadius: const BorderRadius.all(kRadiusS),
         color: context.surfaceColors.secondary,
       ),
-      child: Text(
-        text,
-        style: context.bodyStyles.m.copyWith(color: context.textColors.secondary),
+      child: Padding(
+        padding: const EdgeInsets.all(kSpacingM),
+        child: Text(
+          text,
+          style: context.bodyStyles.m.copyWith(color: context.textColors.secondary),
+        ),
       ),
     );
   }

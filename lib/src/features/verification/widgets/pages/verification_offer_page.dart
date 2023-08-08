@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide ButtonStyle;
 import 'package:loans/src/features/verification/widgets/bordered_text.dart';
 import 'package:loans/src/shared/assets/assets.dart';
 import 'package:loans/src/shared/l10n/l10n.dart';
@@ -33,6 +33,8 @@ class VerificationOfferPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(kSpacingL),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     context.locales.verification_offer_page_title,
@@ -41,7 +43,7 @@ class VerificationOfferPage extends StatelessWidget {
                   const SizedBox(height: kSpacingM),
                   Text(
                     context.locales.verification_offer_subtitle,
-                    style: context.headerStyles.h1.copyWith(color: context.textColors.primary),
+                    style: context.bodyStyles.l.copyWith(color: context.textColors.secondary),
                   ),
                   const SizedBox(height: kSpacingM),
                   BorderedText(context.locales.verification_offer_warning),
@@ -54,6 +56,7 @@ class VerificationOfferPage extends StatelessWidget {
                   Button.large(
                     onPressed: () {},
                     caption: context.locales.verification_offer_skip,
+                    style: ButtonStyle.tertiary,
                   ),
                 ],
               ),

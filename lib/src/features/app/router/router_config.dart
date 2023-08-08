@@ -12,9 +12,12 @@ import 'package:loans/src/features/session/widgets/pages/new_session/new_session
 import 'package:loans/src/features/verification/widgets/pages/verification_offer_page.dart';
 import 'package:loans/src/shared/utils/logger/navigator_observer.dart';
 
+final _rootNavigatorKey = GlobalKey<NavigatorState>();
+
 final $RouterConfig = GoRouter(
   initialLocation: '/profile/verification',
   observers: [NavigationLogger()],
+  navigatorKey: _rootNavigatorKey,
   routes: [
     StatefulShellRoute(
       navigatorContainerBuilder: (context, navigationShell, children) => NavigationManager(
@@ -47,6 +50,7 @@ final $RouterConfig = GoRouter(
               routes: [
                 GoRoute(
                   path: 'verification',
+                  parentNavigatorKey: _rootNavigatorKey,
                   builder: (context, state) => const VerificationOfferPage(),
                 ),
               ],
