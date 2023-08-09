@@ -58,6 +58,13 @@
     "passport_verification_issue_place_hint": "*Обязательно",
     "passport_verification_warning": "Неверно указанные данные могут быть расценены, как введение в заблуждение или мошенничество",
     "passport_verification_submit": "Далее",
+    "@@LOCATION_VERIFICATION_PAGE": "",
+    "location_verification_page_title": "Проживание",
+    "location_verification_registration": "Адрес постоянной регистрации",
+    "location_verification_registration_hint": "*Обязательно",
+    "location_verification_current": "Адрес фактического проживания",
+    "location_verification_current_hint": "*Обязательно",
+    "location_verification_submit": "Завершить",
     "@@ERRORS": "",
     "error_dialog_title": "Ошибка",
     "error_unknown": "Возникла непредвиденная ошибка. Пожалуйста, попробуйте еще раз или повторите позже"
