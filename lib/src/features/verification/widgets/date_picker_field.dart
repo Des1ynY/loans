@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:loans/src/shared/l10n/l10n.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 // TODO: refactor implementation
 class DatePickerField extends StatefulWidget {
-  const DatePickerField({super.key});
+  final String label;
+
+  const DatePickerField({required this.label, super.key});
 
   @override
   State<DatePickerField> createState() => _DatePickerFieldState();
@@ -41,7 +42,7 @@ class _DatePickerFieldState extends State<DatePickerField> {
       child: AbsorbPointer(
         child: TextInputField.labeled(
           controller: _fieldController,
-          label: context.locales.user_verification_birth_date,
+          label: widget.label,
           hintText: _hintText,
         ),
       ),

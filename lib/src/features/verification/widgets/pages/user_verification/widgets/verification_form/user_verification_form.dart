@@ -3,6 +3,7 @@ import 'package:loans/src/features/verification/widgets/date_picker_field.dart';
 import 'package:loans/src/shared/l10n/l10n.dart';
 import 'package:ui_kit/ui_kit.dart';
 
+part 'fields/birth_date_field.dart';
 part 'fields/birth_place_field.dart';
 part 'fields/first_name_field.dart';
 part 'fields/gender_selector.dart';
@@ -35,7 +36,7 @@ class _UserVerificationFormState extends State<UserVerificationForm> {
           SizedBox(height: kSpacingXL),
           _GenderSelector(),
           SizedBox(height: kSpacingXL),
-          DatePickerField(),
+          _BirthDateField(),
           SizedBox(height: kSpacingXL),
           _BirthPlaceField(),
         ],

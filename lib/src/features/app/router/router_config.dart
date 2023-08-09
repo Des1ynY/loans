@@ -9,6 +9,7 @@ import 'package:loans/src/features/authentication/widgets/pages/phone_verificati
 import 'package:loans/src/features/loans/widgets/pages/active_loans/active_loans_page.dart';
 import 'package:loans/src/features/profile/widgets/pages/profile/profile_page.dart';
 import 'package:loans/src/features/session/widgets/pages/new_session/new_session_page.dart';
+import 'package:loans/src/features/verification/widgets/pages/passport_verification/passport_verification_page.dart';
 import 'package:loans/src/features/verification/widgets/pages/user_verification/user_verification_page.dart';
 import 'package:loans/src/features/verification/widgets/pages/verification_offer_page.dart';
 import 'package:loans/src/shared/utils/logger/navigator_observer.dart';
@@ -16,7 +17,7 @@ import 'package:loans/src/shared/utils/logger/navigator_observer.dart';
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
 final $RouterConfig = GoRouter(
-  initialLocation: '/profile/verification/user',
+  initialLocation: '/profile/verification/passport',
   observers: [NavigationLogger()],
   navigatorKey: _rootNavigatorKey,
   routes: [
@@ -58,6 +59,11 @@ final $RouterConfig = GoRouter(
                       path: 'user',
                       parentNavigatorKey: _rootNavigatorKey,
                       builder: (context, state) => const UserVerificationPage(),
+                    ),
+                    GoRoute(
+                      path: 'passport',
+                      parentNavigatorKey: _rootNavigatorKey,
+                      builder: (context, state) => const PassportVerificationPage(),
                     ),
                   ],
                 ),
