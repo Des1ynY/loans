@@ -41,6 +41,8 @@
     "user_verification_last_name_hint": "*Обязательно",
     "user_verification_birth_date": "Дата рождения",
     "user_verification_gender": "Пол",
+    "user_verification_gender_male": "Мужской",
+    "user_verification_gender_female": "Женский",
     "user_verification_birth_place": "Место рождения (как в паспорте)",
     "user_verification_birth_place_hint": "*Обязательно",
     "user_verification_data_warning": "Неверно указанные данные могут быть расценены, как введение в заблуждение или мошенничество",
