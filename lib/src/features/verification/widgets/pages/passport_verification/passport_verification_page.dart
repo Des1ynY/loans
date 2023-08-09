@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loans/src/features/app/router/router_config.dart';
 import 'package:loans/src/features/verification/widgets/bordered_text.dart';
 import 'package:loans/src/features/verification/widgets/pages/passport_verification/widgets/verification_form/passport_verification_form.dart';
 import 'package:loans/src/shared/assets/assets.dart';
@@ -7,6 +8,10 @@ import 'package:ui_kit/ui_kit.dart';
 
 class PassportVerificationPage extends StatelessWidget {
   const PassportVerificationPage({super.key});
+
+  void _proceedToLocationVerification(BuildContext context) {
+    context.router.go('/profile/verification/location');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +45,7 @@ class PassportVerificationPage extends StatelessWidget {
                   BorderedText(context.locales.passport_verification_warning),
                   const SizedBox(height: kSpacingXL),
                   Button.large(
-                    onPressed: () {},
+                    onPressed: () => _proceedToLocationVerification(context),
                     caption: context.locales.passport_verification_submit,
                   ),
                 ],

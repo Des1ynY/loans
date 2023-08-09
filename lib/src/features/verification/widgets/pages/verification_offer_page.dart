@@ -20,10 +20,7 @@ class VerificationOfferPage extends StatelessWidget {
         children: [
           Positioned.fill(
             bottom: MediaQuery.sizeOf(context).height / 2.5,
-            child: Image.asset(
-              Assets.images.passport.path,
-              fit: BoxFit.cover,
-            ),
+            child: Image.asset(Assets.images.passport.path, fit: BoxFit.cover),
           ),
           Positioned.fill(
             top: null,
