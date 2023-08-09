@@ -45,7 +45,7 @@ class _LoginWarningState extends State<LoginWarning> {
     final spans = <TextSpan>[
       TextSpan(
         text: warning.substring(0, offerFirst ? offerStart : privacyStart),
-        style: context.bodyStyles.s.copyWith(color: context.textColors.primary),
+        style: context.bodyStyles.s.copyWith(color: context.textColors.secondary),
       ),
       offerFirst ? offerSpan : privacySpan,
       TextSpan(
@@ -53,7 +53,7 @@ class _LoginWarningState extends State<LoginWarning> {
           offerFirst ? offerEnd : privacyEnd,
           offerFirst ? privacyStart : offerStart,
         ),
-        style: context.bodyStyles.s.copyWith(color: context.textColors.primary),
+        style: context.bodyStyles.s.copyWith(color: context.textColors.secondary),
       ),
       offerFirst ? privacySpan : offerSpan,
       TextSpan(
@@ -61,7 +61,7 @@ class _LoginWarningState extends State<LoginWarning> {
           offerFirst ? privacyEnd : offerEnd,
           warning.length,
         ),
-        style: context.bodyStyles.s.copyWith(color: context.textColors.primary),
+        style: context.bodyStyles.s.copyWith(color: context.textColors.secondary),
       ),
     ];
 

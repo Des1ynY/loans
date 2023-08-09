@@ -33,7 +33,7 @@ class _PhoneVerificationPageTitleState extends State<PhoneVerificationPageTitle>
         Text(
           context.locales.phone_verification_page_subtitle(phone),
           textAlign: TextAlign.center,
-          style: context.bodyStyles.m.copyWith(color: context.textColors.primary),
+          style: context.bodyStyles.m.copyWith(color: context.textColors.secondary),
         ),
       ],
     );

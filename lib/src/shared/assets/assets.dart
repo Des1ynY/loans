@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:loans/src/shared/assets/fonts.gen.dart';
 
+export 'assets.gen.dart';
 export 'fonts.gen.dart';
 
 abstract final class Icons {
