@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loans/src/features/app/router/router_config.dart';
 import 'package:loans/src/features/verification/widgets/bordered_text.dart';
+import 'package:loans/src/features/verification/widgets/close_verification_button.dart';
 import 'package:loans/src/features/verification/widgets/pages/user_verification/widgets/verification_form/user_verification_form.dart';
 import 'package:loans/src/shared/assets/assets.dart';
 import 'package:loans/src/shared/l10n/l10n.dart';
@@ -21,6 +22,10 @@ class UserVerificationPage extends StatelessWidget {
           Positioned.fill(
             bottom: MediaQuery.sizeOf(context).height / 1.5,
             child: Image.asset(Assets.images.passport.path, fit: BoxFit.cover),
+          ),
+          Positioned(
+            top: MediaQuery.viewPaddingOf(context).top,
+            child: const CloseVerificationButton(),
           ),
           DraggableScrollableSheet(
             maxChildSize: 0.85,
