@@ -25,6 +25,11 @@
         }
     },
     "resend_code_request": "Прислать еще",
+    "@@PROFILE_PAGE": "",
+    "profile_navigation_label": "Профиль",
+    "profile_unknown_user": "Кто вы?",
+    "profile_verify_user": "Заполнить данные",
+    "profile_verified_user": "Данные заполнены",
     "@@VERIFICATION_OFFER_PAGE": "",
     "verification_offer_page_title": "Приготовьте паспорт",
     "verification_offer_subtitle": "Чтобы заключить договора займа нужно заполнить ваши паспортные данные",

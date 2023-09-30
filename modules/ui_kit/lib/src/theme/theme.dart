@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:theme_tailor_annotation/theme_tailor_annotation.dart';
 
 part 'schemes/colors_scheme.dart';
+part 'schemes/gradient_scheme.dart';
 part 'schemes/text_scheme.dart';
 part 'theme.tailor.dart';
 
