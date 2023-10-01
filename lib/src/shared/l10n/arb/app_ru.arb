@@ -67,5 +67,9 @@
     "location_verification_submit": "Завершить",
     "@@ERRORS": "",
     "error_dialog_title": "Ошибка",
-    "error_unknown": "Возникла непредвиденная ошибка. Пожалуйста, попробуйте еще раз или повторите позже"
+    "error_unknown": "Возникла непредвиденная ошибка. Пожалуйста, попробуйте еще раз или повторите позже",
+    "@@NAVIGATIOBAR_ICON_NAME":"",
+    "home":"Home",
+    "search":"Search",
+    "profile":"profile"
 }
