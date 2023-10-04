@@ -71,5 +71,5 @@
     "@@NAVIGATIOBAR_ICON_NAME":"",
     "home":"Home",
     "search":"Search",
-    "profile":"profile"
+    "navigation_destination_profile":"profile"
 }

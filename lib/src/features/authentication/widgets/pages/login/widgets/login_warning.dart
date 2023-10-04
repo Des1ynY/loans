@@ -24,14 +24,12 @@ class _LoginWarningState extends State<LoginWarning> {
     final offer = context.locales.login_warning_offer;
     final privacy = context.locales.login_warning_privacy;
 
-    final offerStart = warning.indexOf(offer); //
-    final offerEnd = offerStart + offer.length; //
+    final offerStart = warning.indexOf(offer);
+    final offerEnd = offerStart + offer.length;
     final privacyStart = warning.indexOf(privacy);
     final privacyEnd = privacyStart + privacy.length;
 
     final offerFirst = offerStart < privacyStart;
-    print('$offerStart start');
-    print('$offerEnd end');
 
     final offerSpan = TextSpan(
       text: warning.substring(offerStart, offerEnd),
