@@ -6,3 +6,4 @@ preferred-supported-locales: [ru]
 synthetic-package: false
 nullable-getter: false
 format: true
+untranslated-messages-file: untranslatedmessage.txt

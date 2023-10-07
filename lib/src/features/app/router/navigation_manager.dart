@@ -1,5 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Icons;
 import 'package:go_router/go_router.dart';
+import 'package:loans/src/shared/assets/assets.dart';
+import 'package:loans/src/shared/l10n/l10n.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class NavigationManager extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -18,21 +21,21 @@ class NavigationManager extends StatelessWidget {
         index: navigationShell.currentIndex,
         children: children,
       ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: navigationShell.currentIndex,
-        onDestinationSelected: navigationShell.goBranch,
-        destinations: const [
+      bottomNavigationBar: CustomBottomNavigationBar(
+        currentIndex: navigationShell.currentIndex,
+        onTap: navigationShell.goBranch,
+        items: [
           NavigationDestination(
-            icon: SizedBox.square(dimension: 25, child: ColoredBox(color: Colors.amber)),
-            label: 'Займы',
+            icon: const Icon(Icons.currency),
+            label: context.locales.navigation_destination_profile,
           ),
           NavigationDestination(
-            icon: SizedBox.square(dimension: 25, child: ColoredBox(color: Colors.blue)),
-            label: 'Создать',
+            icon: const Icon(Icons.profile),
+            label: context.locales.home,
           ),
           NavigationDestination(
-            icon: SizedBox.square(dimension: 25, child: ColoredBox(color: Colors.green)),
-            label: 'Профиль',
+            icon: const Icon(Icons.profile),
+            label: context.locales.search,
           ),
         ],
       ),

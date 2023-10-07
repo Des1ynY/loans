@@ -1,0 +1,5 @@
+{
+  "en": [
+    "phone_verification_page_subtitle"
+  ]
+}
